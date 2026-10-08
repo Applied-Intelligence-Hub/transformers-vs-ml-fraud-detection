@@ -24,8 +24,8 @@ Transfer and Interpretation Boundaries*. It is not a training-output directory.
 The dedicated release manifest identifies the files actually provided; it does
 not modify the original historical source manifests or turn preserved fits into
 new training runs. It also identifies the exact manuscript PDF included in this
-release. The current PDF predates the dedicated-link edit, not a scientific-data
-revision, and will be replaced after recompilation in Overleaf.
+release. The reviewed 8 October 2026 PDF includes the dedicated-repository
+links; this documentary update does not change the scientific evidence.
 
 ## What can be reproduced here
 

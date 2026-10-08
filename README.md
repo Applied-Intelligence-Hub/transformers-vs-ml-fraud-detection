@@ -74,10 +74,10 @@ plus the six selected case matrices.
 The shared source is retained to preserve dependencies; specialised correction
 queues still require the author's full archive and are not a generic recipe.
 
-The included PDF is the latest reviewed manuscript before the dedicated-repository
-link update. Its scientific results are unchanged. An Overleaf-recompiled PDF
-with the new Introduction and availability links will replace it; the release
-manifest identifies the exact PDF version and hash.
+The included PDF is the reviewed 8 October 2026 export, with the dedicated
+repository link in the Introduction and Data Availability statement and the
+wider dissertation repository in Data Availability. Its scientific results are
+unchanged. The release manifest identifies the exact PDF and hash.
 
 ## Environment and data
 
