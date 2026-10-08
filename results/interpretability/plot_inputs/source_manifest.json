@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "article": 1,
+  "model_fitting": false,
+  "model_inference": false,
+  "new_shap_computation": false,
+  "test_row_sampling": false,
+  "beeswarm": {
+    "rows": 200000,
+    "original_encoded_columns": 51,
+    "displayed_columns": 15,
+    "individual_columns": 14,
+    "remaining_signed_columns": 37,
+    "colour_policy": "Exact original SHAP 0.51 policy: residual colour is the fifteenth ranked encoded feature, not an aggregate feature value",
+    "order_policy": "Descending mean absolute original encoded attribution before residual aggregation",
+    "dtype_preserved": true,
+    "jitter_seed": 42
+  },
+  "attention": {
+    "scope": "Final layer; attention averaged across heads; all tokens including CLS retained in entropy",
+    "dtype_preserved": true,
+    "storage_precision_note": "Archived float32 weights replay plots; authoritative float64-accumulated summary is retained separately"
+  },
+  "source_sha256": {
+    "results/baf_base/lgbm/none/run_20260312_085758/config.json": "07a57eab5aa39612076244404e9fc2110c2cf72e2307a32b77a8b099b42a31ee",
+    "results/baf_base/lgbm/none/run_20260312_085758/model.joblib": "e1d1625c469c1e5724bf68bc6ec444e867c3e46827b4c9a69359b2982c529753",
+    "results/baf_base/lgbm/none/run_20260312_085758/shap_values.npy": "99f257f9fb352e0369ab2addeb4dba63ae69c25c338e8fbfab9a66b49dec8911",
+    "results/baf_base/lgbm/none/run_20260312_085758/y_test.npy": "d4da3d6a6c62ef54d683eb8837c0d88c54a26ff4fe32d7f8b74ae491201e83fd",
+    "datasets/Base.csv": "7bf10a37ce07e72e14c1b09e5efee3d27261baff4facc7da767b0474dcf9b809",
+    "results_revision/20261005/derived/reporting/generation_qa.json": "7bafe378ab0c2842b03ad408c285e9e8f2e9d09779038176ccd3947227b66f42",
+    "results_revision/20261005/revision_manifest.json": "dbdf3c9d97ce51c219b26573e62ff8739fd460ed69c4faec5bacd45ca532e216",
+    "results_revision/20261005/derived/interpretability/attention/attention_cls_weights.npy": "16f4727abf695c28bfa54ecc616630a46203858543071712626dff9090890801",
+    "results_revision/20261005/derived/interpretability/attention/attention_matrix_FP_1.npy": "30b71b85b8ccfba158e2f2833d56280e6c7ee757dea6deaf4673e7fb96c208c0",
+    "results_revision/20261005/derived/interpretability/attention/attention_matrix_FP_2.npy": "47902bac2ab70ffa0eb8561fabe3dfd7dfd11febe202a2ced64fb495e7ed669d",
+    "results_revision/20261005/derived/interpretability/attention/attention_matrix_FP_3.npy": "a25d2e8311f68cea228dd51f84e55f9993e08495ff9605d3a5a6a8d9c4f36576",
+    "results_revision/20261005/derived/interpretability/attention/attention_matrix_FN_1.npy": "44214324c6f26d5f52afc0ec2d6f56902249816862ee69f9416a771760d9eff0",
+    "results_revision/20261005/derived/interpretability/attention/attention_matrix_FN_2.npy": "21178c5e76f47f71307f470b3518fa3337a4bff69a1ed323a66dc7054d0847e3",
+    "results_revision/20261005/derived/interpretability/attention/attention_matrix_FN_3.npy": "e2c96ee371f0ef52692c7d177be2dcff89761b1272997a90161d24796e8bb151",
+    "results_revision/20261005/derived/interpretability/attention/attention_summary.json": "e856e7238f3f0b3c126a830ce367dee8b89aea779b35c33c46c52cbb21324d66"
+  },
+  "archives": {
+    "beeswarm.npz": {
+      "sha256": "18e6892d9e66591603150eb96b8274706a89be74a0812670e2bb751e060eb9d8",
+      "bytes": 32532102
+    },
+    "attention.npz": {
+      "sha256": "4d0fbed4a48c592d29a3f7238e888769e6b99a0525b83b68d27dd045a3f9bf66",
+      "bytes": 21742098
+    }
+  },
+  "replay_scope": "Same complete displayed saved evidence; not fresh inference, not causal attribution, and not bitwise PDF/PNG reproduction"
+}
