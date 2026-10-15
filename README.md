@@ -34,9 +34,12 @@ bank-account application suite. PR-AUC denotes average precision (AP).
   LightGBM leads Variant I AP and CatBoost leads II–V by point estimate.
   All supervised models have lower Variant F2 than on Base at frozen thresholds.
 - **Interpretation boundaries:** compatible LR/LGBM/CatBoost SHAP comparisons
-  concern original-feature sets, not causality or equal rankings. The fixed
-  LGBM retains its top-10 set across Base and filtered Variants, while orders
-  and attribution magnitudes can change.
+  first sum signed one-hot contributions per original feature, then average
+  their absolute net contribution over cases. The fixed LGBM retains its top-10
+  set across Base and filtered Variants, but `customer_age` rises by about
+  71–72% in Variants II–V and moves from rank 17 to 11. Jaccard measures set
+  membership, not unchanged ranks, magnitudes or causal effects. The former
+  sum of absolute encoded contributions is retained as a sensitivity analysis.
 - **Separate attention diagnostic:** mean normalised final-layer,
   head-averaged FT-Transformer CLS attention entropy is 0.985. Diffuse
   attention is not faithful output attribution or an information ceiling.
@@ -48,7 +51,10 @@ BAF months are pooled and transfer uses 30 common predictors, excluding the
 extra `x1`/`x2` in Variants III/V. Exact-profile separation is not proof of
 entity-level independence, mutual Variant independence or prospective transfer.
 
-Baseline hyperparameters are reused across seven primary strategies.
+Baseline hyperparameters are reused across seven primary strategies. All seven
+results are retained, but audited SMOTE+Tomek duplicates SMOTE in these runs;
+between-strategy means and population standard deviations use six effective
+conditions so that the same treatment is not counted twice.
 Classical models use five-fold inner validation and FT-Transformer one internal
 holdout. Corrected ULB searches and preserved BAF classical models have distinct
 provenance. Single outer splits and conditional row-bootstrap intervals do not
@@ -74,10 +80,41 @@ plus the six selected case matrices.
 The shared source is retained to preserve dependencies; specialised correction
 queues still require the author's full archive and are not a generic recipe.
 
-The included PDF is the reviewed 8 October 2026 export, with the dedicated
-repository link in the Introduction and Data Availability statement and the
-wider dissertation repository in Data Availability. Its scientific results are
-unchanged. The release manifest identifies the exact PDF and hash.
+The included PDF is the reviewed **15 October 2026, revision 2** export
+(21 pages), released with the code and evidence as `20261015_supervisor_r2`.
+Its SHA-256 is
+`ffd52e00984fea74f4d0d96bb74dbb936233bad2f432efacf715049940b09184`.
+Frozen fitted models, primary score arrays and selected operating rules are
+preserved. This revision corrects interpretation and aggregate reporting and
+adds diagnostics; it does not rerun model training. The release manifest pins
+the PDF, reporting assets and numerical evidence together.
+
+## Revised reporting and diagnostics
+
+The frozen full-DEV FT-Transformer, model B, remains the primary evaluated
+model. Its threshold was selected on the validation scores of separately fitted
+model A. A/validation, A/TEST and B/TEST are labelled separately in the transport
+diagnostic; one additional inference pass from preserved A on TEST does not
+select a new threshold or replace the primary model. A validation precision
+target is not a TEST guarantee: the BAF transformer attains TEST precision
+0.391 under the rule targeting at least 0.5 on validation. Classical thresholds
+retain the median of fold-selected values, with fold variability reported.
+
+Average precision groups equal scores and is unchanged by this revision.
+Top-k precision/recall use `expected_uniform_boundary_v1`: when a tied score
+block crosses the cut, credit is the expected value under uniform selection
+within that block, rather than row-order tie breaking. Only the ULB RF ROS and
+RF Class Weights top-k cells change in the audit. Float64 prior-adjusted Brier
+results are separate diagnostics, not fitted probability calibration or a new
+primary predictor. The paired BAF CatBoost-minus-LightGBM AP difference is
+about +0.0028, with a 95% interval of [-0.0017, +0.0072]; it does not establish
+pairwise superiority.
+
+The [evidence README](results/README.md) locates the supplementary tables,
+SHAP aggregation sensitivity, magnitude contrasts and overlap/workload
+diagnostics. Filtered transfer remains the primary comparison; unfiltered
+cohorts and alternate checkpoints are labelled diagnostics, not interchangeable
+measurements of the same fitted function and population.
 
 ## Environment and data
 

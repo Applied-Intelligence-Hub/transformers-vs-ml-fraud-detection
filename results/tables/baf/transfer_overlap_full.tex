@@ -1,0 +1,42 @@
+\begin{longtable}{@{}llrrrl@{}}
+\ifdefined\SupervisorLongTableCaption\caption{\SupervisorLongTableCaption}\label{\SupervisorLongTableLabel}\\\fi
+\toprule
+Model & Variant & AP original & AP filtered & Relative (\%) & Rank \\
+\midrule
+\endfirsthead
+\toprule
+Model & Variant & AP original & AP filtered & Relative (\%) & Rank \\
+\midrule
+\endhead
+LR & I & 0.1084 & 0.1066 & +1.65 & 5 to 5 \\
+LR & II & 0.1420 & 0.1442 & -1.52 & 5 to 5 \\
+LR & III & 0.1015 & 0.1039 & -2.33 & 5 to 5 \\
+LR & IV & 0.1359 & 0.1334 & +1.88 & 5 to 5 \\
+LR & V & 0.1005 & 0.1005 & -0.02 & 5 to 5 \\
+RF & I & 0.2058 & 0.1342 & +53.29 & 1 to 4 \\
+RF & II & 0.2245 & 0.1615 & +39.02 & 1 to 4 \\
+RF & III & 0.1699 & 0.1193 & +42.45 & 1 to 4 \\
+RF & IV & 0.2108 & 0.1477 & +42.72 & 1 to 4 \\
+RF & V & 0.1593 & 0.1093 & +45.79 & 1 to 4 \\
+LGBM & I & 0.1546 & 0.1483 & +4.22 & 2 to 1 \\
+LGBM & II & 0.1856 & 0.1803 & +2.94 & 3 to 2 \\
+LGBM & III & 0.1338 & 0.1328 & +0.79 & 2 to 2 \\
+LGBM & IV & 0.1718 & 0.1646 & +4.36 & 3 to 2 \\
+LGBM & V & 0.1222 & 0.1185 & +3.18 & 3 to 2 \\
+CatBoost & I & 0.1518 & 0.1472 & +3.11 & 3 to 2 \\
+CatBoost & II & 0.1871 & 0.1822 & +2.68 & 2 to 1 \\
+CatBoost & III & 0.1336 & 0.1329 & +0.57 & 3 to 1 \\
+CatBoost & IV & 0.1736 & 0.1668 & +4.11 & 2 to 1 \\
+CatBoost & V & 0.1235 & 0.1207 & +2.27 & 2 to 1 \\
+FT-Trans. & I & 0.1479 & 0.1462 & +1.14 & 4 to 3 \\
+FT-Trans. & II & 0.1743 & 0.1751 & -0.47 & 4 to 3 \\
+FT-Trans. & III & 0.1308 & 0.1327 & -1.48 & 4 to 3 \\
+FT-Trans. & IV & 0.1617 & 0.1589 & +1.75 & 4 to 3 \\
+FT-Trans. & V & 0.1177 & 0.1168 & +0.72 & 4 to 3 \\
+OCSVM & I & 0.0167 & 0.0164 & +2.05 & 6 to 6 \\
+OCSVM & II & 0.0221 & 0.0220 & +0.70 & 6 to 6 \\
+OCSVM & III & 0.0178 & 0.0178 & +0.22 & 6 to 6 \\
+OCSVM & IV & 0.0205 & 0.0205 & -0.14 & 6 to 6 \\
+OCSVM & V & 0.0166 & 0.0165 & +0.63 & 6 to 6 \\
+\bottomrule
+\end{longtable}
